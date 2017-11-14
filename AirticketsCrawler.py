@@ -1,6 +1,8 @@
 ﻿from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from time import sleep
 
+<<<<<<< HEAD
 options = webdriver.ChromeOptions()
 
 # 设置中文
@@ -13,11 +15,24 @@ browser.get('https://www.skyscanner.com.tw/transport/d/tpe/2018-04-07/kix/tak/20
 
 """
 element = browser.find_element_by_id("i0116")
+=======
+driver = webdriver.Chrome()
+driver.get('https://www.google.com.tw')
+driver.maximize_window()
+
+# by id
+element = driver.find_element_by_id('lst-ib')
+
+# key in
+>>>>>>> bb69b8013c80b96e7a6b802221ccf4c21bfcc4b0
 element.send_keys("hddsom")
-element = browser.find_element_by_id("idSIButton9")
+
+# enter
 element.send_keys(Keys.RETURN)
-element = browser.find_element_by_id("i0118")
-element.send_keys("@XXXXXXXX")
-element = browser.find_element_by_id("idBtn_Back")
-element.send_keys(Keys.RETURN)
+<<<<<<< HEAD
 """
+=======
+
+sleep(10)
+driver.quit()
+>>>>>>> bb69b8013c80b96e7a6b802221ccf4c21bfcc4b0
