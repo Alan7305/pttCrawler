@@ -1,73 +1,51 @@
 ﻿from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
+from bs4 import BeautifulSoup
+import re
 
-<<<<<<< HEAD
 options = webdriver.ChromeOptions()
 
-# 设置中文
-#options.add_argument('lang=zh_CN.UTF-8')
-# 更换头部
-aaoptions.add_argument('user-agent="Mozilla/5.0 (iPod; U; CPU iPhone OS 2_1 like Mac OS X; ja-jp) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5F137 Safari/525.20"')
+# set lang
+options.add_argument('lang=zh_TW.UTF-8')
+# set header
+options.add_argument('user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36"')
 
-browser = webdriver.Chrome("C:/Users/Alan/Downloads/chromedriver_win32/chromedriver.exe",chrome_options=options)
-browser.get('https://www.skyscanner.com.tw/transport/d/tpe/2018-04-07/kix/tak/2018-04-14/tpe?adults=2&children=1&adultsv2=2&childrenv2=5&infants=0&cabinclass=economy&ref=day-view&seo_airline=dd#results')
+driver = webdriver.Chrome(chrome_options=options)
+driver.get('https://www.skyscanner.com.tw/transport/d/tpe/2018-04-07/kix/tak/2018-04-14/tpe?adults=2&children=1&adultsv2=2&childrenv2=5&infants=0&cabinclass=economy&ref=day-view&seo_airline=dd#results')
 
-"""
-element = browser.find_element_by_id("i0116")
-=======
-driver = webdriver.Chrome()
-driver.get('https://outlook.com/')
-driver.maximize_window()
+sleep(15)
+soup = BeautifulSoup(driver.page_source, 'lxml')
+articles = soup.select('.day-list-item')
 
-element = driver.find_element_by_css_selector('.buttonLargeBlue')
-element.send_keys(Keys.RETURN)
+i = 0
+data = []
+for article in articles:
+    if i < 3:
+        #去程時刻
+        tripTogo = article.select('.card-main')[0].getText()
+        tripTogo_ST = re.findall(r"\d{2}:\d{2}", tripTogo)[0]
+        tripTogo_ET = re.findall(r"\d{2}:\d{2}", tripTogo)[1]
+        #回程時刻
+        tripReturn = article.select('.card-main')[1].getText()
+        tripReturn_ST = re.findall(r"\d{2}:\d{2}", tripReturn)[0]
+        tripReturn_ET = re.findall(r"\d{2}:\d{2}", tripReturn)[1]
+        #價格
+        tripPrice = article.select('.mainquote-group-price')[0].getText()
+        tripPrice = re.search(r"\d+,\d+", tripPrice).group().replace(',','')
+        
+        data.append({
+                        'tripTogo_ST':tripTogo_ST,
+                        'tripTogo_ET':tripTogo_ET,
+                        'tripReturn_ST':tripReturn_ST,
+                        'tripReturn_ET':tripReturn_ET,
+                        'tripPrice':tripPrice
+                    })
+        i += 1
+    else:
+        break
 
-element = driver.find_element_by_id('i0116')
-element.send_keys("hdd525@msn.com")
-element.send_keys(Keys.RETURN)
-sleep(1)
-element = driver.find_element_by_id('i0118')
-element.send_keys("@lan9879665")
-element.send_keys(Keys.RETURN)
-sleep(1)
-element = driver.find_element_by_id('22')
-element.click()
-sleep(1)
-element = driver.switch_to_active_element()
-element.send_keys("julie_shie@carrefour.com")
-sleep(1)
-element = driver.find_element_by_id('TextField419')
-element.send_keys("自動發信給謝筑涵老婆兒~")
-element.send_keys("自動的啦")
+print(data)
 
-sleep(5)
-driver.quit()
-
-"""
-driver = webdriver.Chrome()
-driver.get('https://www.google.com.tw')
-driver.maximize_window()
-
-# by id
-element = driver.find_element_by_id('lst-ib')
-
-# key in
->>>>>>> bb69b8013c80b96e7a6b802221ccf4c21bfcc4b0
-element.send_keys("hddsom")
-
-# enter
-element.send_keys(Keys.RETURN)
-<<<<<<< HEAD
-"""
-=======
-
-<<<<<<< HEAD
-sleep(5)
-driver.quit()
-"""
-=======
 sleep(10)
 driver.quit()
->>>>>>> bb69b8013c80b96e7a6b802221ccf4c21bfcc4b0
->>>>>>> bcd09324016e527c0a898e1dc2b58300c7eb0200
