@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>nvested expression</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -51,12 +51,13 @@
         margin-left: 0;
         }
         .sidebar2 {
+        width: 200px;
         position: fixed;
         top: 50px;
         bottom: 0;
         left: 45px;
         z-index: 1000;
-        padding-top: 0;
+        padding-left: 5px;
         overflow-x: hidden;
         overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
         border-right: 1px solid #eee;
@@ -66,7 +67,7 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="padding:4px;">
-        <a class="navbar-brand" href="#">nvested expression</a>
+        <a class="navbar-brand" href="#" style="padding-left:10px;color:cyan;">Nvested<font class="text-white" style="font-size:10px;">Expression</font></a>
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -75,13 +76,18 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Settings</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Help</a>
-            </li>
           </ul> 
+          <div class="nav-item float-right">
+                <button type="button" class="btn btn-success">
+                    airtickets <span class="badge badge-light">2</span>
+                </button>
+                <button type="button" class="btn btn-warning">
+                    stocks <span class="badge badge-light">2</span>
+                </button>
+                <button type="button" class="btn btn-danger">
+                    stocks <span class="badge badge-light">1</span>
+                </button>
+            </div>
         </div>
       </nav>
     </header>
@@ -93,6 +99,11 @@
                     <li class="nav-item" style="padding:10px 5px 0px 5px;" title="close bar">
                         <div class="bg-dark text-light rounded text-center" style="height:34px;width:34px;line-height:34px;font-size:20px;">
                             <i class="fa fa-bars" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li class="nav-item" style="padding:10px 5px 0px 5px;" title="message">
+                        <div class="text-dark rounded-circle text-center" style="height:34px;width:34px;line-height:34px;font-size:20px;background-color:#d6d6d6;" >
+                            <i class="fa fa-bullhorn" aria-hidden="true"></i>
                         </div>
                     </li>
                     <li class="nav-item" style="padding:10px 5px 0px 5px;" title="airtickets">
@@ -117,7 +128,7 @@
                     </li>
                 </ul>
             </nav>
-            <nav class="bg-light sidebar2 col-sm-2">
+            <nav class="bg-light sidebar2">
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item" style="padding:10px 0px 0px 0px;">
                         CONSOLE
@@ -127,15 +138,19 @@
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item" style="padding-left:20px;font-size:14px;">
                         <i class="fa fa-search" aria-hidden="true"></i> Search
-                        <font class="text-secondary">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ctrl+q</font>
+                        <font class="text-secondary float-right" style="padding-right:20px;">ctrl+q</font>
                     </li>
                     <li class="nav-item" style="padding-left:20px;font-size:14px;">
                         <i class="fa fa-file-o" aria-hidden="true"></i> New
-                        <font class="text-secondary">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ctrl+n</font>
+                        <font class="text-secondary float-right" style="padding-right:20px;">ctrl+n</font>
                     </li>
                     <li class="nav-item" style="padding-left:20px;font-size:14px;">
                         <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
-                        <font class="text-secondary">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ctrl+s</font>
+                        <font class="text-secondary float-right" style="padding-right:20px;">ctrl+s</font>
+                    </li>
+                    <li class="nav-item" style="padding-left:20px;font-size:14px;">
+                        <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
+                        <font class="text-secondary float-right" style="padding-right:20px;">ctrl+r</font>
                     </li>
                 </ul>
                 <ul class="nav nav-pills flex-column">
@@ -145,12 +160,12 @@
                 </ul>
                 <hr style="margin:5px;">
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item" style="padding-left:20px;font-size:14px;">
+                    <li class="nav-item text-secondary" style="padding-left:20px;font-size:14px;">
                         <i class="fa fa-chevron-right" aria-hidden="true" style="font-size:4px;"></i> 04/07~04/13
                     </li>
-                    <li class="nav-item" style="padding-left:20px;font-size:14px;">
+                    <li class="nav-item text-dark list-group-item-success" style="padding-left:20px;font-size:14px;">
                         <i class="fa fa-chevron-right" aria-hidden="true" style="font-size:4px;"></i> 04/07~04/14
-                        <font class="text-secondary">&ensp;&ensp;&ensp;&ensp;&ensp;<i class="fa fa-check" aria-hidden="true"></i></font>
+                        <font class="float-right" style="padding-right:20px;"><i class="fa fa-check" aria-hidden="true"></i></font>
                     </li>
                 </ul>
             </nav>
@@ -160,7 +175,6 @@
                         Airtickets > 04/07~04/14   
                     </li>
                 </ul>
-                <hr style="margin:5px;">
                 <table class="table table-sm table-hover">
                     <thead>
                         <tr>
