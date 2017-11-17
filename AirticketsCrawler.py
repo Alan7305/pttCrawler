@@ -1,4 +1,4 @@
-﻿"""This script..."""
+﻿""" Search for the airline ticket """
 import re
 import json
 import datetime
@@ -7,9 +7,9 @@ from selenium.webdriver.common.keys import Keys
 from time import sleep
 from bs4 import BeautifulSoup
 
-class Quote:
+class Skyscanner:
     """
-    取得機票報價
+    form Skyscanner
     """
 
     def __init__(self, startDate, endDate, adults, children, toGoDeparture, toGoDestination, returnDeparture, returnDestination):
@@ -23,11 +23,11 @@ class Quote:
         self.returnDestination = returnDestination
         self.data = {}
 
-        Quote.search(self)
+        Skyscanner.search(self)
 
     def search(self):
         """
-        ....
+        Execute the search
         """
 
         options = webdriver.ChromeOptions()
@@ -53,21 +53,23 @@ class Quote:
         i = 0
         for article in articles:
             if i < 3:
-                #去程時刻
+                # togo
                 togo_airline = article.select('.big')[0]['alt']
                 meta_togo = article.select('.card-main')[0].getText()
                 togo_stime = re.findall(r"\d{2}:\d{2}", meta_togo)[0]
                 togo_etime = re.findall(r"\d{2}:\d{2}", meta_togo)[1]
                 togo_departure = re.findall(r"[A-Z]{3}", meta_togo)[0]
                 togo_destination = re.findall(r"[A-Z]{3}", meta_togo)[1]
-                #回程時刻
+                
+                # return
                 return_airline = article.select('.big')[1]['alt']
                 meta_return = article.select('.card-main')[1].getText()
                 return_stime = re.findall(r"\d{2}:\d{2}", meta_return)[0]
                 return_etime = re.findall(r"\d{2}:\d{2}", meta_return)[1]
                 return_departure = re.findall(r"[A-Z]{3}", meta_return)[0]
                 return_destination = re.findall(r"[A-Z]{3}", meta_return)[1]
-                #價格
+                
+                # fare
                 ticket_fare = article.select('.mainquote-group-price')[0].getText()
                 ticket_fare = re.search(r"\d+,\d+", ticket_fare).group().replace(',','')
                 
