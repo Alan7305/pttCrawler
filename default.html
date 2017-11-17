@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+    
+    <style>
+        /*
+        * Base structure
+        */
+
+        /* Move down content because we have a fixed navbar that is 3.5rem tall */
+        body {
+        padding-top: 3.5rem;
+        }
+
+        /*
+        * Sidebar
+        */
+
+        .sidebar {
+        position: fixed;
+        top: 50px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        padding-top: 0;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        border-right: 1px solid #eee;
+        }
+
+        .sidebar .nav {
+        margin-bottom: 20px;
+        }
+
+        .sidebar .nav-item {
+        width: 100%;
+        }
+
+        .sidebar .nav-item + .nav-item {
+        margin-left: 0;
+        }
+        .sidebar2 {
+        position: fixed;
+        top: 50px;
+        bottom: 0;
+        left: 45px;
+        z-index: 1000;
+        padding-top: 0;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        border-right: 1px solid #eee;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="padding:4px;">
+        <a class="navbar-brand" href="#">nvested expression</a>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Help</a>
+            </li>
+          </ul> 
+        </div>
+      </nav>
+    </header>
+
+    <div>
+        <div>
+            <nav class="bg-light sidebar">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item" style="padding:10px 5px 0px 5px;">
+                        <div class="bg-dark text-light rounded-circle text-center" style="height:34px;width:34px;line-height:34px;font-size:20px;">
+                            <i class="fa fa-plane" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li class="nav-item" style="padding:10px 5px 0px 5px;">
+                        <div class="text-dark rounded-circle text-center" style="height:34px;width:34px;line-height:34px;font-size:20px;background-color:#d6d6d6;" >
+                            <i class="fa fa-diamond" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li class="nav-item" style="padding:10px 5px 0px 5px;">
+                        <div class="text-dark rounded-circle text-center" style="height:34px;width:34px;line-height:34px;font-size:20px;background-color:#d6d6d6;" >
+                            <i class="fa fa-bug" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="bg-light sidebar2 col-sm-2">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item" style="padding:10px 0px 0px 0px;">
+                        FLAVOR
+                    </li>
+                </ul>
+                <hr style="margin:5px;">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item" style="padding-left:20px;font-size:14px;">
+                        <i class="fa fa-chevron-right" aria-hidden="true" style="font-size:5px;"></i> 17/11/16
+                    </li>
+                    <li class="nav-item" style="padding-left:20px;font-size:14px;">
+                        <i class="fa fa-chevron-right" aria-hidden="true" style="font-size:5px;"></i> 17/11/17
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </li>
+                </ul>
+            </nav>
+
+            <main role="main" class="col-sm-11 ml-sm-auto col-md-10 pt-3">
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
