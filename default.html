@@ -57,7 +57,7 @@
         bottom: 0;
         left: 45px;
         z-index: 1000;
-        padding-left: 5px;
+        padding: 0px 5px 0px 5px;
         overflow-x: hidden;
         overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
         border-right: 1px solid #eee;
@@ -97,75 +97,88 @@
             <nav class="bg-light sidebar">
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item" style="padding:10px 5px 0px 5px;" title="close bar">
-                        <div class="bg-dark text-light rounded text-center" style="height:34px;width:34px;line-height:34px;font-size:20px;">
+                        <button type="button" class="btn btn-dark" style="padding:0;height:34px;width:34px;line-height:34px;font-size:20px;">
                             <i class="fa fa-bars" aria-hidden="true"></i>
-                        </div>
+                        </button>
                     </li>
                     <li class="nav-item" style="padding:10px 5px 0px 5px;" title="message">
-                        <div class="text-dark rounded-circle text-center" style="height:34px;width:34px;line-height:34px;font-size:20px;background-color:#d6d6d6;" >
+                        <button type="button" class="btn btn-light rounded-circle" style="padding:0;height:34px;width:34px;line-height:34px;font-size:20px;">
                             <i class="fa fa-bullhorn" aria-hidden="true"></i>
-                        </div>
+                        </button>
                     </li>
                     <li class="nav-item" style="padding:10px 5px 0px 5px;" title="airtickets">
-                        <div class="bg-dark text-light rounded-circle text-center" style="height:34px;width:34px;line-height:34px;font-size:20px;">
+                        <button type="button" class="btn btn-light rounded-circle active" style="padding:0;height:34px;width:34px;line-height:34px;font-size:20px;">
                             <i class="fa fa-plane" aria-hidden="true"></i>
-                        </div>
+                        </button>
                     </li>
                     <li class="nav-item" style="padding:10px 5px 0px 5px;" title="investment analyst">
-                        <div class="text-dark rounded-circle text-center" style="height:34px;width:34px;line-height:34px;font-size:20px;background-color:#d6d6d6;" >
+                        <button type="button" class="btn btn-light rounded-circle" style="padding:0;height:34px;width:34px;line-height:34px;font-size:20px;">
                             <i class="fa fa-diamond" aria-hidden="true"></i>
-                        </div>
+                        </button>
                     </li>
                     <li class="nav-item" style="padding:10px 5px 0px 5px;" title="crawler">
-                        <div class="text-dark rounded-circle text-center" style="height:34px;width:34px;line-height:34px;font-size:20px;background-color:#d6d6d6;" >
+                        <button type="button" class="btn btn-light rounded-circle" style="padding:0;height:34px;width:34px;line-height:34px;font-size:20px;">
                             <i class="fa fa-bug" aria-hidden="true"></i>
-                        </div>
+                        </button>
                     </li>
                     <li class="nav-item" style="padding:10px 5px 0px 5px;" title="info">
-                        <div class="text-dark rounded-circle text-center" style="height:34px;width:34px;line-height:34px;font-size:20px;background-color:#d6d6d6;" >
+                        <button type="button" class="btn btn-light rounded-circle" style="padding:0;height:34px;width:34px;line-height:34px;font-size:20px;">
                             <i class="fa fa-info" aria-hidden="true"></i>
-                        </div>
+                        </button>
                     </li>
                 </ul>
             </nav>
             <nav class="bg-light sidebar2">
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item" style="padding:10px 0px 0px 0px;">
+                    <li class="nav-item" style="padding:10px 0px 0px 5px;">
                         CONSOLE
                     </li>
                 </ul>
                 <hr style="margin:5px;">
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item" style="padding-left:20px;font-size:14px;">
-                        <i class="fa fa-search" aria-hidden="true"></i> Search
-                        <font class="text-secondary float-right" style="padding-right:20px;">ctrl+q</font>
+                    <li class="nav-item" style="padding-left:20px;">
+                        <button type="button" class="btn btn-light" style="padding:0;width:100%;font-size:14px;">
+                            <font class="float-left"><i class="fa fa-search" aria-hidden="true"></i> Search</font>
+                            <font class="text-secondary float-right" style="padding-right:10px;">ctrl+q</font>                                    
+                        </button>
                     </li>
-                    <li class="nav-item" style="padding-left:20px;font-size:14px;">
-                        <i class="fa fa-file-o" aria-hidden="true"></i> New
-                        <font class="text-secondary float-right" style="padding-right:20px;">ctrl+n</font>
+                    <li class="nav-item" style="padding-left:20px;">
+                        <button type="button" class="btn btn-light" style="padding:0;width:100%;font-size:14px;">
+                            <font class="float-left"><i class="fa fa-file-o" aria-hidden="true"></i> New</font>
+                            <font class="text-secondary float-right" style="padding-right:10px;">ctrl+n</font>                                    
+                        </button>
                     </li>
-                    <li class="nav-item" style="padding-left:20px;font-size:14px;">
-                        <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
-                        <font class="text-secondary float-right" style="padding-right:20px;">ctrl+s</font>
+                    <li class="nav-item" style="padding-left:20px;">
+                        <button type="button" class="btn btn-light" style="padding:0;width:100%;font-size:14px;">
+                            <font class="float-left"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</font>
+                            <font class="text-secondary float-right" style="padding-right:10px;">ctrl+s</font>                                    
+                        </button>
                     </li>
-                    <li class="nav-item" style="padding-left:20px;font-size:14px;">
-                        <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
-                        <font class="text-secondary float-right" style="padding-right:20px;">ctrl+r</font>
+                    <li class="nav-item" style="padding-left:20px;">
+                        <button type="button" class="btn btn-light" style="padding:0;width:100%;font-size:14px;">
+                            <font class="float-left"><i class="fa fa-refresh" aria-hidden="true"></i> Refresh</font>
+                            <font class="text-secondary float-right" style="padding-right:10px;">ctrl+r</font>                                    
+                        </button>
                     </li>
                 </ul>
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item" style="padding:10px 0px 0px 0px;">
+                    <li class="nav-item" style="padding:10px 0px 0px 5px;">
                         LIST
                     </li>
                 </ul>
                 <hr style="margin:5px;">
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item text-secondary" style="padding-left:20px;font-size:14px;">
-                        <i class="fa fa-chevron-right" aria-hidden="true" style="font-size:4px;"></i> 04/07~04/13
+                    <li class="nav-item" style="padding-left:20px;">
+                        <button type="button" class="btn btn-light active" style="padding:0;width:100%;font-size:14px;">
+                            <font class="float-left"><i class="fa fa-chevron-right" aria-hidden="true" style="font-size:4px;"></i> 04/07~04/13</font>
+                            <font class="float-right" style="padding-right:10px;"><i class="fa fa-check text-success" aria-hidden="true"></i></font>                                    
+                        </button>
                     </li>
-                    <li class="nav-item text-dark list-group-item-success" style="padding-left:20px;font-size:14px;">
-                        <i class="fa fa-chevron-right" aria-hidden="true" style="font-size:4px;"></i> 04/07~04/14
-                        <font class="float-right" style="padding-right:20px;"><i class="fa fa-check" aria-hidden="true"></i></font>
+                    <li class="nav-item" style="padding-left:20px;">
+                        <button type="button" class="btn btn-light" style="padding:0;width:100%;font-size:14px;">
+                            <font class="float-left"><i class="fa fa-chevron-right" aria-hidden="true" style="font-size:4px;"></i> 04/07~04/14</font>
+                            <font class="float-right" style="padding-right:10px;"></font>                                    
+                        </button>
                     </li>
                 </ul>
             </nav>
