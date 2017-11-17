@@ -54,12 +54,14 @@ class Quote:
         for article in articles:
             if i < 3:
                 #去程時刻
+                togo_airline = article.select('.big')[0]['alt']
                 meta_togo = article.select('.card-main')[0].getText()
                 togo_stime = re.findall(r"\d{2}:\d{2}", meta_togo)[0]
                 togo_etime = re.findall(r"\d{2}:\d{2}", meta_togo)[1]
                 togo_departure = re.findall(r"[A-Z]{3}", meta_togo)[0]
                 togo_destination = re.findall(r"[A-Z]{3}", meta_togo)[1]
                 #回程時刻
+                return_airline = article.select('.big')[1]['alt']
                 meta_return = article.select('.card-main')[1].getText()
                 return_stime = re.findall(r"\d{2}:\d{2}", meta_return)[0]
                 return_etime = re.findall(r"\d{2}:\d{2}", meta_return)[1]
@@ -71,12 +73,14 @@ class Quote:
                 
                 data[date_now].append({
                     'outbound' : {
+                        'airline' : togo_airline,
                         'depTime' : togo_stime,
                         'arrTime' : togo_etime,
                         'departure' : togo_departure,
                         'destination' : togo_destination
                     },
                     'inbound' : {
+                        'airline' : return_airline,
                         'depTime' : return_stime,
                         'arrTime' : return_etime,
                         'departure' : return_departure,
@@ -96,5 +100,6 @@ class Quote:
         export json file to Hard Disk
         """
 
-        with open(path, 'w') as f:
+        with open(path, 'w', encoding='utf-8') as f:
             json.dump(self.data, f, ensure_ascii=False)
+            self.path = path
