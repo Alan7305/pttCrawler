@@ -54,23 +54,23 @@ class Skyscanner:
         for article in articles:
             if i < 3:
                 # togo
-                togo_airline = article.select('.big')[0]['alt']
-                meta_togo = article.select('.card-main')[0].getText()
+                togo_airline = article.select('.AirlineLogo__big-logo-image-3V2-Z')[0]['alt']
+                meta_togo = article.select('.leg-info')[0].getText()
                 togo_stime = re.findall(r"\d{2}:\d{2}", meta_togo)[0]
                 togo_etime = re.findall(r"\d{2}:\d{2}", meta_togo)[1]
                 togo_departure = re.findall(r"[A-Z]{3}", meta_togo)[0]
                 togo_destination = re.findall(r"[A-Z]{3}", meta_togo)[1]
                 
                 # return
-                return_airline = article.select('.big')[1]['alt']
-                meta_return = article.select('.card-main')[1].getText()
+                return_airline = article.select('.AirlineLogo__big-logo-image-3V2-Z')[1]['alt']
+                meta_return = article.select('.leg-info')[1].getText()
                 return_stime = re.findall(r"\d{2}:\d{2}", meta_return)[0]
                 return_etime = re.findall(r"\d{2}:\d{2}", meta_return)[1]
                 return_departure = re.findall(r"[A-Z]{3}", meta_return)[0]
                 return_destination = re.findall(r"[A-Z]{3}", meta_return)[1]
                 
                 # fare
-                ticket_fare = article.select('.mainquote-group-price')[0].getText()
+                ticket_fare = article.select('.price')[0].getText()
                 ticket_fare = re.search(r"\d+,\d+", ticket_fare).group().replace(',','')
                 
                 data[date_now].append({
