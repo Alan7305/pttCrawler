@@ -2,6 +2,7 @@
 import re
 import json
 import datetime
+import uuid
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
@@ -36,15 +37,16 @@ class Skyscanner:
         options.add_argument('lang=zh_TW.UTF-8')
         # set header
         #options.add_argument('user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36"')
-        options.add_argument('user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 ASDAF-dsfsdfss-asdasd-ssalas"')
+        options.add_argument('user-agent="Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 ' + str(uuid.uuid4()) + str(uuid.uuid4()) + str(uuid.uuid4()) + '"')
 
         driver = webdriver.Chrome(chrome_options=options)
         driver.get('https://www.skyscanner.com.tw/transport/d/'+self.toGoDeparture+'/'+self.startDate+'/'+self.toGoDestination+'/'+self.returnDeparture+'/'+self.endDate+'/'+self.returnDestination+'?adults='+self.adults+'&children='+self.children+'&adultsv2='+self.adults+'&childrenv2=5&infants=0&cabinclass=economy&ref=home#results')
         #driver.get('https://www.skyscanner.com.tw/transport/d/tpe/2018-04-07/kix/tak/2018-04-14/tpe?adults=2&children=1&adultsv2=2&childrenv2=5&infants=0&cabinclass=economy&ref=home#results')
 
-        sleep(15)
+        sleep(10)
         soup = BeautifulSoup(driver.page_source, 'lxml')
-        articles = soup.select('.day-list-item')
+        #articles = soup.select('.day-list-item')
+        articles = soup.findAll('li', { 'class' : 'day-list-item' })
 
         date_now = datetime.datetime.now().strftime('%Y%m%d')
         data = {}
@@ -53,6 +55,8 @@ class Skyscanner:
         i = 0
         for article in articles:
             if i < 3:
+                #print(article.getText())
+                
                 # togo
                 togo_airline = article.select('.AirlineLogo__big-logo-image-3V2-Z')[0]['alt']
                 meta_togo = article.select('.leg-info')[0].getText()
